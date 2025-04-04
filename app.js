@@ -44,6 +44,7 @@ function renderTasks() {
     
     localStorage.setItem('tasks', JSON.stringify(tasks));
     updateFilterButtons();
+    updateStats(); // Actualizar estadísticas
 }
 
 // Función para escapar caracteres especiales en regex
@@ -59,6 +60,17 @@ function updateFilterButtons() {
 
     const activeBtn = document.getElementById('filter' + currentFilter.charAt(0).toUpperCase() + currentFilter.slice(1));
     if (activeBtn) activeBtn.classList.add('active');
+}
+
+// Actualizar estadísticas
+function updateStats() {
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const activeTasks = totalTasks - completedTasks;
+
+    document.getElementById('totalTasks').textContent = totalTasks;
+    document.getElementById('activeTasks').textContent = activeTasks;
+    document.getElementById('completedTasks').textContent = completedTasks;
 }
 
 // Controlador: Añadir tarea
