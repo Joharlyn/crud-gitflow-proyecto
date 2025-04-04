@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Nueva tarea...">
+            <button id="addTask">Añadir</button>
+        </div>
+
+        <!-- Filtros de tareas añadidos -->
+        <div class="task-filters">
+            <button id="filterAll" class="filter-btn active">Todas</button>
+            <button id="filterActive" class="filter-btn">Activas</button>
+            <button id="filterCompleted" class="filter-btn">Completadas</button>
+        </div>
+
+        <div class="task-list">
+            <h2>Mis Tareas</h2>
+            <ul id="tasks"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -87,3 +87,24 @@ h1 {
     border-radius: 3px;
     cursor: pointer;
 }
+
+.task-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.filter-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
