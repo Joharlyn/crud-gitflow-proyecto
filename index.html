@@ -15,7 +15,7 @@
             <button id="addTask">Añadir</button>
         </div>
 
-        <!-- Buscador de tareas añadido -->
+        <!-- Buscador de tareas -->
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Buscar tareas...">
         </div>
@@ -27,6 +27,23 @@
             <button id="filterCompleted" class="filter-btn">Completadas</button>
         </div>
 
+        <!-- Estadísticas de tareas -->
+        <div class="task-stats">
+            <div class="stat-item">
+                <span id="totalTasks">0</span>
+                <p>Total</p>
+            </div>
+            <div class="stat-item">
+                <span id="activeTasks">0</span>
+                <p>Activas</p>
+            </div>
+            <div class="stat-item">
+                <span id="completedTasks">0</span>
+                <p>Completadas</p>
+            </div>
+        </div>
+
+        <!-- Lista de tareas -->
         <div class="task-list">
             <h2>Mis Tareas</h2>
             <ul id="tasks"></ul>
