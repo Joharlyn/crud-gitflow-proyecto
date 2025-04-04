@@ -1,7 +1,7 @@
 // Modelo: Almacenamiento de datos
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-// Vista: Renderizar las tareas
+// Vista: Renderizar las tareas con estado de completado
 function renderTasks() {
     const taskList = document.getElementById('tasks');
     taskList.innerHTML = '';
@@ -9,8 +9,11 @@ function renderTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
-            <span class="task-text">${task.text}</span>
+            <span class="task-text ${task.completed ? 'completed' : ''}">${task.text}</span>
             <div class="task-actions">
+                <button class="complete-btn" onclick="toggleComplete(${index})">
+                    ${task.completed ? 'Desmarcar' : 'Completar'}
+                </button>
                 <button class="edit-btn" onclick="editTask(${index})">Editar</button>
                 <button class="delete-btn" onclick="deleteTask(${index})">Eliminar</button>
             </div>
@@ -18,7 +21,6 @@ function renderTasks() {
         taskList.appendChild(li);
     });
     
-    // Guardar en localStorage
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
